@@ -1,0 +1,9 @@
+# Cursor
+.cursorindexingignore
+.specstory
+
+# VSCode
+.vscode
+
+/node_modules
+.DS_Store
