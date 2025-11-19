@@ -54,7 +54,7 @@ https://x.com/kitlangton
 
 Visual Types には以下のような幅広いセクションが用意されています。
 
-**Foundation(基礎編):**
+**Foundation（基礎編）:**
 
 - Types as Sets（型を集合として）
 - Literal Types（リテラル型）
@@ -64,7 +64,7 @@ Visual Types には以下のような幅広いセクションが用意されて�
 - Object Types（オブジェクト型）
 - Intersection Types（インターセクション型）
 
-**Basic Ⅱ(応用編):**
+**Basic II（応用編）:**
 
 - Type Aliases（型エイリアス）
 - Generic Types（ジェネリック型）
@@ -84,7 +84,7 @@ Visual Types には以下のような幅広いセクションが用意されて�
 - Reflexivity（反射性）
 - Conditional Unions
 - Conditional Non-Distribution
-- Contidional Filters
+- Conditional Filters
 - `infer`キーワード
 
 **Utility Types（ユーティリティ型）:**
