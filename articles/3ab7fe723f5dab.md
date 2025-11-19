@@ -1,5 +1,5 @@
 ---
-title: "型パズルがわからない？じゃあこれ見て！！"
+title: "型がわからない？じゃあこれ見て！！"
 emoji: "🧩"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [TypeScript, 型パズル, type-challenges]
