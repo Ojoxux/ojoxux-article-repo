@@ -10,7 +10,7 @@ published: false
 
 こんにちは、型パズル勉強中の Ojoxux です。
 
-この記事はTypeScript の型に慣れていない方や、type-challenges で型パズルに挑戦している方に向けた記事です。
+この記事は TypeScript の型に慣れていない方や、type-challenges で型パズルに挑戦している方に向けた記事です。
 
 ## 型って難しいよね
 
@@ -58,13 +58,13 @@ Visual Types には以下のような幅広いセクションが用意されて�
 
 **Foundation（基礎編）:**
 
-- Types as Sets（型を集合として）
+- Types as Sets（型と集合）
 - Literal Types（リテラル型）
 - Union Types（ユニオン型）
-- Subtypes as Subsets（部分型と部分集合）
+- Subtypes as Subsets（部分型）
 - Tuple Types（タプル型）
 - Object Types（オブジェクト型）
-- Intersection Types（インターセクション型）
+- Intersection Types（交差型）
 
 **Basic II（応用編）:**
 
@@ -77,16 +77,16 @@ Visual Types には以下のような幅広いセクションが用意されて�
 **Object Patterns（オブジェクトパターン）:**
 
 - `keyof`演算子
-- Indexed Access（インデックスアクセス）
+- Indexed Access（インデックスアクセス型）
 - Mapped Types（マップ型）
 
 **Conditional Types（条件付き型）:**
 
 - Conditional Types（条件付き型）
 - Reflexivity（反射性）
-- Conditional Unions
-- Conditional Non-Distribution
-- Conditional Filters
+- Conditional Unions（条件付きユニオン）
+- Conditional Non-Distribution（条件の分配防止）
+- Conditional Filters（条件フィルタ）
 - `infer`キーワード
 
 **Utility Types（ユーティリティ型）:**
@@ -97,7 +97,7 @@ TypeScript でよく使われるような概念をセクションごとにまと
 
 ## 実際に見てみよう：`Pick`の例
 
-type-challenges における最初の鬼門、`Pick`をVisual Types で見てみましょう。
+type-challenges における最初の鬼門、`Pick` を Visual Types で見てみましょう。
 
 `Pick`とは、オブジェクト型から指定したプロパティだけを抽出するユーティリティ型のことです。
 
@@ -109,7 +109,7 @@ type Pick<T, K extends keyof T> = {
 
 中身を説明すると、`K extends keyof T`でオブジェクトのキーのみを受け付けて、`[P in K]: T[P]`でそれらのプロパティをマッピングする型なのですが、初見だとなんのこっちゃですよね。
 
-Visual Types では、例えば以下のケースの入出力が挙げられています。
+Visual Types では、例えば以下の入出力ケースが挙げられています。
 
 ![Pick](/images/Pick-IO.png)
 
@@ -127,8 +127,8 @@ Visual Types は以下のような時に特に役に立ちそうです！
 - **チーム内での型の説明時** - ベン図などのビジュアルを使って、型の関係性を直感的に共有できる
 - **公式ドキュメントの補助として** - 文章だけでは理解しづらい概念を、視覚的に確認できる
 
-活用の幅は大きそうです！が、ユーティリティ型のセクションはまだ充実していないので、今後のアップデートを楽しみに待ちたいですね。
+活用の幅は大きそうです！ただ、ユーティリティ型のセクションはまだ充実していないので、type-challenges で活用するためにも今後のアップデートを楽しみに待ちたいですね。
 
-ぜひサイトを訪れて、型と仲良くなりましょう！！！
+ぜひサイトを訪れて、型と仲良くなりましょう！！
 
 https://types.kitlangton.com/
