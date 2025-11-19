@@ -42,11 +42,11 @@ https://x.com/kitlangton
 
 `true extends boolean`のケースでは、小さな円（true）が大きな円（boolean）の中に含まれる様子がベン図で表示されます。これにより、「true は boolean の部分集合だから成立する」という関係性が直感的に理解できます。
 
-![true extends boolean](/assets/img/true-extends-boolean.png)
+![true extends boolean](/images/true-extends-boolean.png)
 
 一方、`false | "maybe" extends "maybe" | true`のケースでは、2 つの円が一部重なっているものの、完全には含まれていない様子が表示されます。`"maybe"`という共通部分があるため円が重なっていますが、左側には`false`、右側には`true`という独自の要素があるため、**完全に含まれる関係ではない**ことがベン図で一目瞭然です。
 
-![false | "maybe" extends "maybe" | true](/assets/img/false-maybe-extends-maybe-true.png)
+![false | "maybe" extends "maybe" | true](/images/false-maybe-extends-maybe-true.png)
 
 このように、複数のケースを見比べることで、より理解が深まりそうです！
 
