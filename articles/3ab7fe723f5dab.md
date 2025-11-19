@@ -1,5 +1,5 @@
 ---
-title: "TypeScriptの型をビジュアルで理解！「Visual Types」を試してみた"
+title: "TypeScriptの型をビジュアルで理解！「Visual Types」が良かった"
 emoji: "🧩"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [TypeScript, 型パズル, type-challenges]
