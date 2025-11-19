@@ -1,5 +1,5 @@
 ---
-title: "型がわからない？じゃあこれ見て！！"
+title: "TypeScriptの型をビジュアルで理解！「Visual Types」を試してみた"
 emoji: "🧩"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [TypeScript, 型パズル, type-challenges]
@@ -8,11 +8,11 @@ published: false
 
 こんにちは、型パズル勉強中の Ojoxux です。
 
-この記事は「TypeScript の型操作がどうやって動いてるの？」といった型に慣れていない方や、type-challenges で型パズルに挑戦している方にもおすすめの記事となっています。
+この記事はTypeScript の型に慣れていない方や、type-challenges で型パズルに挑戦している方に向けた記事です。
 
 ## 型って難しいよね
 
-TypeScript の型システムは強力ですが、複雑な型操作になると「この型がどういう結果になるのか」を理解するのが難しいですよね。
+TypeScript の型システムは強力ですが、この型がどういう結果になるのかを理解するのが難しいですよね。
 
 また [type-challenges](https://github.com/type-challenges/type-challenges) などで型パズルに挑戦していると、「この型、どういう流れで評価されてるの？」と頭を抱えた経験がある方も多いのではないでしょうか。
 
@@ -42,11 +42,11 @@ https://x.com/kitlangton
 
 `"kit" extends string`のケースでは、小さな円（"kit"）が大きな円（string）の中に含まれる様子がベン図で表示されます。これにより、「"kit" は string の部分集合だから成立する」という関係性が直感的に理解できます。
 
-!["kit" extends string](/images/kit-extends-string.png)
+!["kit" extends string のベン図表示](/images/kit-extends-string.png)
 
 一方、`false | "maybe" extends "maybe" | true`のケースでは、2 つの円が一部重なっているものの、完全には含まれていない様子が表示されます。`"maybe"`という共通部分があるため円が重なっていますが、左側には`false`、右側には`true`という独自の要素があるため、**完全に含まれる関係ではない**ことがベン図で一目瞭然です。
 
-![false | "maybe" extends "maybe" | true](/images/false_maybe_extends_maybe_true.png)
+![false | "maybe" extends "maybe" | true のベン図表示](/images/false_maybe_extends_maybe_true.png)
 
 このように、複数のケースを見比べることで、より理解が深まりそうです！
 
@@ -95,9 +95,9 @@ TypeScript でよく使われるような概念をセクションごとにまと
 
 ## 実際に見てみよう：`Pick`の例
 
-type-challenges でよく最初に解かれる`Pick`を、Visual Types で見てみましょう。
+type-challenges における最初の鬼門、`Pick`をVisual Types で見てみましょう。
 
-`Pick`は、オブジェクト型から指定したプロパティだけを抽出するユーティリティ型のことです。
+`Pick`とは、オブジェクト型から指定したプロパティだけを抽出するユーティリティ型のことです。
 
 ```typescript
 type Pick<T, K extends keyof T> = {
@@ -105,21 +105,28 @@ type Pick<T, K extends keyof T> = {
 };
 ```
 
-おなじみのコードですね。
-Visual Types では、例えば以下のケースの I/O が用意されています。
+中身を説明すると、`K extends keyof T`でオブジェクトのキーのみを受け付けて、`[P in K]: T[P]`でそれらのプロパティをマッピングする型なのですが、初見だとなんのこっちゃですよね。
+
+Visual Types では、例えば以下のケースの入出力が挙げられています。
 
 ![Pick](/images/Pick-IO.png)
 
-入力例として`"a" | "b"`が指定されていて、出力例では`"a"`と`"b"`のみのオブジェクト型になっています。わかりやすい！
+入力例として`"a" | "b"`が指定されていて、出力例では`"a"`と`"b"`のみのオブジェクト型になっています。これならわかりやすい！！
 
-他にも Pick を使った様々なケースが用意されており、Pick による型操作を直感的に学ぶことができます。
+他にも Pick を使った様々な入出力ケースが用意されていて、Pick による型操作を直感的に学ぶことができます。
 
 ## まとめ
 
-TypeScript の型システムは最初は難しく感じますが、このようなビジュアライザを使うことでより深く理解することができます。
+TypeScript の型システムは最初は難しく感じますが、このようなビジュアライザを使うことでよりとっつきやすくなりそうです！
 
-もちろん、公式ドキュメントの補助として使ったりもできると思うので活用の幅は大きそうです！ただ、ユーティリティ型のセクションはまだ充実していないので、今後のアップデートを楽しみに待ちたいところです。
+Visual Types は以下のような時に特に役に立ちそうです！
 
-ぜひサイトを訪れて、いろいろな型を試してみてください！
+- **TypeScript の型の基礎を学ぶ時** - 条件付き型や`infer`など、型システムの基本的な概念を視覚的に理解できる
+- **チーム内での型の説明時** - ベン図などのビジュアルを使って、型の関係性を直感的に共有できる
+- **公式ドキュメントの補助として** - 文章だけでは理解しづらい概念を、視覚的に確認できる
+
+活用の幅は大きそうです！が、ユーティリティ型のセクションはまだ充実していないので、今後のアップデートを楽しみに待ちたいですね。
+
+ぜひサイトを訪れて、型と仲良くなりましょう！！！
 
 https://types.kitlangton.com/
