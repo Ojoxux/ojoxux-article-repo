@@ -40,9 +40,9 @@ https://x.com/kitlangton
 
 いくつか例を見てみましょう。
 
-`true extends boolean`のケースでは、小さな円（true）が大きな円（boolean）の中に含まれる様子がベン図で表示されます。これにより、「true は boolean の部分集合だから成立する」という関係性が直感的に理解できます。
+`"kit" extends string`のケースでは、小さな円（"kit"）が大きな円（string）の中に含まれる様子がベン図で表示されます。これにより、「"kit" は string の部分集合だから成立する」という関係性が直感的に理解できます。
 
-![true extends boolean](/images/true_extends_boolean.png)
+!["kit" extends string](/images/kit-extends-string.png)
 
 一方、`false | "maybe" extends "maybe" | true`のケースでは、2 つの円が一部重なっているものの、完全には含まれていない様子が表示されます。`"maybe"`という共通部分があるため円が重なっていますが、左側には`false`、右側には`true`という独自の要素があるため、**完全に含まれる関係ではない**ことがベン図で一目瞭然です。
 
