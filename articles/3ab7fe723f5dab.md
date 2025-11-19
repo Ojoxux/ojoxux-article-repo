@@ -26,6 +26,8 @@ https://types.kitlangton.com/
 
 作者は [Effect-TS](https://github.com/Effect-TS/effect) のコミュニティでも活躍されている Kit Langton さんが公開しています。
 
+https://x.com/kitlangton
+
 ## Visual Types を触ってみて...
 
 実際に触ってみると、その良さがさらに実感できました。
