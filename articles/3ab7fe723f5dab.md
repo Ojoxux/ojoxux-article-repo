@@ -99,20 +99,16 @@ type-challenges でよく最初に解かれる`Pick`を、Visual Types で見て
 
 `Pick`は、オブジェクト型から指定したプロパティだけを抽出するユーティリティ型のことです。
 
-Visual Types では、例えば`Pick`のケースが用意されています。
-
 ```typescript
-Pick<{ x: number; y: number; z: number }, "x" | "y">;
+type Pick<T, K extends keyof T> = {
+  [P in K]: T[P];
+};
 ```
 
-↓ 出力はこのように表示される ↓
+おなじみのコードですね。
+Visual Types では、例えば以下のケースの I/O が用意されています。
 
-```typescript
-{
-  x: number;
-  y: number;
-}
-```
+![Pick](/images/Pick-IO.png)
 
 入力例として`"x" | "y"`を指定されていて、出力例では`z`プロパティが除外されて`x`と`y`だけになっています。わかりやすい！
 
