@@ -6,6 +6,8 @@ topics: [TypeScript, 型パズル, type-challenges]
 published: false
 ---
 
+# はじめに
+
 こんにちは、型パズル勉強中の Ojoxux です。
 
 この記事はTypeScript の型に慣れていない方や、type-challenges で型パズルに挑戦している方に向けた記事です。
